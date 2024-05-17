@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head><title>CCalculator</title></head>
+<body>
+  <h1>CCalculator 🧮</h1>
+  <form method="post">
+    <label for="a">A:</label>
+    <input type="number" id="a" name="a" value="{{ a }}"><br><br>
+    <label for="b">B:</label>
+    <input type="number" id="b" name="b" value="{{ b }}"><br><br>
+    <label for="operation">Operation:</label>
+    <select id="operation" name="operation">
+        <option value="add" {% if operation == 'add' %}selected{% endif %}>add</option>
+        <option value="subtract" {% if operation == 'subtract' %}selected{% endif %}>subtract</option>
+        <option value="multiply" {% if operation == 'multiply' %}selected{% endif %}>multiply</option>
+        <option value="divide" {% if operation == 'divide' %}selected{% endif %}>divide</option>
+        <option value="power" {% if operation == 'power' %}selected{% endif %}>power</option>
+        <option value="square_root" {% if operation == 'square_root' %}selected{% endif %}>square root</option>
+        <option value="factorial" {% if operation == 'factorial' %}selected{% endif %}>factorial</option>
+        <option value="is_prime" {% if operation == 'is_prime' %}selected{% endif %}>prime check</option>
+    </select><br><br>
+    <input type="submit" value="Calculate!!!">
+  </form>
+  {% if result != "" %}
+    <h3>Result: {{ result }}</h3>
+  {% endif %}
+</body>
+</html>
